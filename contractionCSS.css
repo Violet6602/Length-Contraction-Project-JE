@@ -1,0 +1,9 @@
+#bar{
+  height: 50vh;
+  width: 50 vw;
+  border: 10px solid black;
+  border-top-left-radius: 10vh;
+  border-bottom-left-radius: 10vh;
+  border-top-right-radius: 25vh;
+  border-bottom-right-radius: 25vh; 
+}

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Length Contraction</title>
+<style>
+@import url(contractionCSS.css);
+</style>
+
+<script>
+
+var velocity = 150000000;
+var length = 100;
+var sOL = 299792458;
+var observedLength = length * Math.sqrt(1 - (Math.pow(velocity, 2) / Math.pow(sOL, 2)));
+
+function setBar(){
+document.getElementById("bar").style.width = (observedLength.toString() + "vw");
+
+document.getElementById("result").innerHTML = (observedLength.toString());
+}
+window.onload = setBar;
+</script>
+
+</head>
+<body>
+
+<div id="bar"></div>
+
+<p id="result">Inner HTML</p>
+
+<button onclick="changeVelo()">Change Velocity</button>
+<button onclick="changeLength()">Change Length</button>
+
+<script>
+function changeVelo(){
+velocity = prompt("Enter a velocity between 0 and the speed of light", velocity);
+observedLength = length * Math.sqrt(1 - (Math.pow(velocity, 2) / Math.pow(sOL, 2)));
+
+document.getElementById("bar").style.width = (observedLength.toString() + "vw");
+
+document.getElementById("result").innerHTML = (observedLength.toString());
+}
+function changeLength(){
+length = prompt("Enter a length that is more than 0", length);
+
+observedLength = length * Math.sqrt(1 - (Math.pow(velocity, 2) / Math.pow(sOL, 2)));
+
+document.getElementById("bar").style.width = ((observedLength * 0.8).toString() + "vw");
+
+document.getElementById("result").innerHTML = (observedLength.toString());
+
+}
+</script>
+
+
+<footer style="text-align: center;">
+<a href="http://validator.w3.org/check/referer">
+<strong> HTML </strong> Valid! </a>
+</footer>
+
+</body>
+</html>
